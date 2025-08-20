@@ -1,0 +1,206 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/sugar.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox - PressureBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00000">
+    <!-- Add to your head section -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+
+<div class="app-container" id="appContainer" style="display: none;">
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn mobile-only">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                
+               <a href="index.html"> <div class="logo2"><i class="fa-solid fa-heart-pulse"></i></div></a>
+                 <a href="index.html"><span class="app-name">PressureBuddy V2</span></a>
+                
+                <button class="close-btn mobile-only">
+                    <i class="fas fa-times"></i>
+                </button>
+
+            </div>
+            <hr>
+            
+            <div class="sidebar-menu">
+                <a href="index.html" class="menu-item ">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+                <a href="inbox.html" class="menu-item active ">
+                    <i class="fa-solid fa-inbox"></i>
+                    <span class="menu-text">Inbox & Updates</span>
+                </a>
+                                 <a href="../../index.html" class="menu-item">
+                    <!-- <i class="fas fa-chart-line"></i> -->
+                     <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="menu-text">Go back</span>
+                 </a>
+                <!-- <div class="menu-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="menu-text">Trends</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-history"></i>
+                    <span class="menu-text">History</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span class="menu-text">Guide</span>
+                </div> -->
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="settings.html" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span class="menu-text">Settings</span>
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <nav class="top-nav">
+                
+                <div class="nav-content">
+                    <div class="nav-left">
+<!-- In your index.html, keep the toggle button simple -->
+<!-- <button class="toggle-collapse desktop-only">
+    <i class="fas fa-chevron-left"></i>
+</button> -->
+                    <a href="index.html"><div class="logo mobile-only"><i class="fa-solid fa-heart-pulse"></i></div></a>
+     <a href="settings.html"><span>Hey, <span id="userWelcomeName"></span></span>   </a> 
+            <!-- <i id="shareBtn" style="cursor: pointer;" class="fa-solid fa-share-nodes"></i> -->
+                 
+    </div>
+                    <div class="nav-right">
+                        
+                        <!-- <span id="currentDateTime"></span> -->
+                        <!-- <span id="readingsCount">0 Readings</span> -->
+                    </div>
+                </div>
+            </nav>
+            <!-- <hr> -->
+            
+
+            <main>
+                                <div class="content-card">
+
+                    <h1 style="font-weight: bolder; color: #0eaf7a; text-align: center;"><i class="fa-solid fa-inbox"></i>  Inbox & Updates</h1>
+                </div>
+<div class="content-card">
+<h1>Hi and Welcome to <span style="color: #0eaf7a;">P</span>ressure<span style="color: #0eaf7a;">B</span>uddy</h1>
+</div>
+            </main>
+  
+
+<!-- <div id="mms-overlay">
+    <a href="https://mmssb.github.io/" target="_blank" rel="noopener noreferrer">
+      <img src="https://mmssb.github.io/assets/images/mmslogo.PNG" alt="MMS Logo" class="mms-logo">
+      <span>Made by MMS</span>
+    </a>
+  </div> -->
+        <!-- Overlay & Share Menu -->
+  <div id="shareOverlay" class="overlay hidden">
+    <div class="share-menu">
+      <span id="closeBtn" class="close-btn">x</span>
+      <h3>Share this page</h3>
+
+      <!-- Link Bar -->
+      <div class="link-bar">
+        <input type="text" id="shareLink" readonly value="https://mmssb.github.io/sugartrack.com"/>
+        <button id="copyBtn">Copy</button>
+      </div>
+
+      <!-- Social Buttons -->
+      <div class="social-buttons">
+        <a href="#" onclick="shareTo('whatsapp')" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" onclick="shareTo('facebook')" class="social-icon facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" onclick="shareTo('twitter')" class="social-icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" onclick="shareTo('bluesky')" class="social-icon bluesky"><i class="fa-brands fa-bluesky"></i></a>
+        <a href="#" onclick="shareTo('email')" class="social-icon email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="#" onclick="shareTo('gmail')" class="social-icon gmail"><i class="fa-brands fa-google-plus-g"></i></a>
+      </div>
+    </div>
+  </div>
+    <!-- <script src="./script.js"></script> -->
+    <!-- <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log('Service Worker Registered'))
+    .catch((error) => console.error('Service Worker Error:', error));
+}
+</script> -->
+    <!-- <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+</script>
+<script>
+    // Listen for beforeinstallprompt event
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the mini-infobar from appearing on mobile
+  e.preventDefault();
+  // Stash the event so it can be triggered later
+  deferredPrompt = e;
+  // Show your custom install button/prompt
+  showInstallPromotion();
+});
+
+function showInstallPromotion() {
+  // Create or show your install button
+  const installButton = document.getElementById('installButton');
+  if (installButton) {
+    installButton.style.display = 'block';
+    installButton.addEventListener('click', () => {
+      // Show the install prompt
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    });
+  }
+}
+</script> -->
+<!-- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'937f093b4ae87bc0',t:'MTc0NTkzMjE5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script> -->
+    <script src="share.js"></script>
+    <!-- <script src="dark.js"></script> -->
+<!-- <script src="./script.js"></script> -->
+<script src="sidebar.js"></script>
+</body>
+</html>

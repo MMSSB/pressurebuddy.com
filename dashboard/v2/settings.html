@@ -1,0 +1,165 @@
+<!-- settings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/pressure.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - PressureBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+<div class="app-container" id="appContainer" style="display: none;">
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn mobile-only">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                
+               <a href="index.html"> <div class="logo2"><i class="fa-solid fa-heart-pulse"></i></div></a>
+                 <a href="index.html"><span class="app-name">PressureBuddy V2</span></a>
+                
+                <button class="close-btn mobile-only">
+                    <i class="fas fa-times"></i>
+                </button>
+
+            </div>
+            <hr>
+            
+            <div class="sidebar-menu">
+                <a href="index.html" class="menu-item ">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+                <a href="inbox.html" class="menu-item ">
+                    <i class="fa-solid fa-inbox"></i>
+                    <span class="menu-text">Inbox & Updates</span>
+                </a>
+                                 <a href="../../index.html" class="menu-item">
+                    <!-- <i class="fas fa-chart-line"></i> -->
+                     <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="menu-text">Go back</span>
+                 </a>
+                <!-- <div class="menu-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="menu-text">Trends</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-history"></i>
+                    <span class="menu-text">History</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span class="menu-text">Guide</span>
+                </div> -->
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="settings.html" class="menu-item active">
+                    <i class="fas fa-cog"></i>
+                    <span class="menu-text">Settings</span>
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <nav class="top-nav">
+                
+                <div class="nav-content">
+                    <div class="nav-left">
+<!-- In your index.html, keep the toggle button simple -->
+<!-- <button class="toggle-collapse desktop-only">
+    <i class="fas fa-chevron-left"></i>
+</button> -->
+                    <a href="index.html"><div class="logo mobile-only"><i class="fa-solid fa-heart-pulse"></i></div></a>
+     <a href="settings.html"><span>Hey, <span id="userWelcomeName"></span></span>   </a> 
+            <!-- <i id="shareBtn" style="cursor: pointer;" class="fa-solid fa-share-nodes"></i> -->
+                 
+    </div>
+                    <div class="nav-right">
+                        
+                        <!-- <span id="currentDateTime"></span> -->
+                        <!-- <span id="readingsCount">0 Readings</span> -->
+                    </div>
+                </div>
+            </nav>
+            <!-- <hr> -->
+
+        <main>
+            <div class="content-card">
+                <h2>Settings</h2>
+                <div class="input-group">
+                    <label>Theme</label>
+                    <select id="themeSelect">
+                        <option value="system">System Default</option>
+                        <option value="light">Light Mode</option>
+                        <option value="dark">Dark Mode</option>
+                    </select>
+                </div>
+            </div>
+                <div class="content-card">
+                    <div class="input-group">
+                        <label for="newName">Change Name</label>
+                        <div class="reading-input">
+                            <input type="text" id="newName" placeholder="Enter new name">
+                            <button id="changeNameButton"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <!-- <button id="changeNameButton">Update</button> -->
+                        </div>
+                    </div>
+                    <!-- Change this section -->
+
+
+                </div>
+                <div class="content-card">
+    <span style="font-weight: bolder;">Name: <span style="color: #0eaf7a;" id="userFullNameDisplay"></span></span>
+</div>
+
+            <div class="content-card">
+                <h3>This Website is made By <a href="https://mmssb.github.io"><span style="color: #0eaf7a;">MMS</span></h3></a>
+                <h4>this Website is made for storing blood pressure data of user on its browser</h4>
+            </div>
+            <div class="content-card">
+                <h3>Version: <span style="color: #0eaf7a; cursor: pointer;">PBV2.0</span></h3>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Overlay & Share Menu -->
+    <div id="shareOverlay" class="overlay hidden">
+        <div class="share-menu">
+            <span id="closeBtn" class="close-btn">x</span>
+            <h3>Share this page</h3>
+            <div class="link-bar">
+                <input type="text" id="shareLink" readonly value="http://mmssb.github.io/pressurebuddy.com" />
+                <button id="copyBtn">Copy</button>
+            </div>
+            <div class="social-buttons">
+                <a href="#" onclick="shareTo('whatsapp')" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" onclick="shareTo('facebook')" class="social-icon facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" onclick="shareTo('twitter')" class="social-icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" onclick="shareTo('bluesky')" class="social-icon bluesky"><i class="fa-brands fa-bluesky"></i></a>
+                <a href="#" onclick="shareTo('email')" class="social-icon email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" onclick="shareTo('gmail')" class="social-icon gmail"><i class="fa-brands fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div id="mms-overlay">
+        <a href="https://mmssb.github.io/" target="_blank" rel="noopener noreferrer">
+            <img src="https://mmssb.github.io/assets/images/mmslogo.PNG" alt="MMS Logo" class="mms-logo">
+            <span>Made by MMS</span>
+        </a>
+    </div> -->
+    
+    <script src="settings.js"></script>
+    <!-- <script src="share.js"></script> -->
+    <script src="sidebar.js"></script>
+</body>
+</html>

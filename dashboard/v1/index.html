@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/pressure.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PressureBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-card">
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i></div>
+            <!-- <div class="logo">PB</div> -->
+            <h1>Welcome to PressureBuddy</h1>
+            <p>Please enter your name to get started</p>
+            <form id="nameForm">
+                <input type="text" id="userName" placeholder="Enter your name" required>
+                <button type="submit" >Get Started</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="app-container" id="appContainer" style="display: none;">
+        <nav class="top-nav">
+            <div class="nav-content">
+                <div class="nav-left">
+                   <a href="index.html"> <div class="logo"><i class="fa-solid fa-heart-pulse"></i></div></a>
+                   <!-- <a href="index.html"> <div class="logo">PB</div></a> -->
+                   <a href="index.html"><span style="font-weight: bold;">PressureBuddy V1</span></a>
+                    <a href="settings.html"><i class="fa-solid fa-gear"></i></a>
+                    <a href="../../index.html" title="Go back"><i class="fa-solid fa-right-from-bracket"></i></a>
+                    <!-- <i id="shareBtn" style="cursor: pointer;" class="fa-solid fa-share-nodes"></i> -->
+                </div>
+                
+                <div class="nav-right">
+                    <span>Welcome, <span id="userWelcomeName"></span></span>
+                    <span id="currentDateTime"></span>
+                    <span id="readingsCount">0 Readings</span>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="content-card">
+                <h2>Blood Pressure Tracker</h2>
+                <p class="subtitle">Track your blood pressure readings over time</p>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Date & Time</label>
+                        <div class="date-time-inputs">
+                            <input type="date" id="date">
+                            <input type="time" id="time">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Systolic (mmHg)</label>
+                        <div class="reading-input">
+                            <input type="number" id="systolic" placeholder="Systolic">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Diastolic (mmHg)</label>
+                        <div class="reading-input">
+                            <input type="number" id="diastolic" placeholder="Diastolic">
+                            <button id="addReading" style="text-align: center; align-content: center; justify-content: center; align-items: center; align-items: center; justify-items: center;"><i class="fa-solid fa-plus" style=" "></i></button>
+                            <!-- <button id="addReading">Add</button> -->
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Comment (Optional)</label>
+                        <input class="comment" type="text" id="comment" placeholder="Add a comment or note">
+                    </div>
+                </div>
+
+                <div class="actions-row">
+                    <button id="resetButton" style="color: white; background-color: #ef4444;" class="buttonreset">
+                        <span class="icon">↺</span> Reset
+                    </button>
+                    <div class="export-buttons">
+                        <button id="importButton">
+                            <span class="icon">📂</span> Import
+                        </button>
+                        <input type="file" id="fileInput" accept=".hype" style="display: none;">
+                        <button id="saveButton">
+                            <span class="icon">💾</span> Save
+                        </button>
+                        <button id="exportImage">
+                            <span class="icon">📷</span> Image
+                        </button>
+                        <button id="exportPDF">
+                            <span class="icon">📄</span> PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Recent Readings</h2>
+                <div class="readings-list" id="readingsList"></div>
+            </div>
+
+            <div class="content-card">
+                <h2>Blood Pressure Trends</h2>
+                <p class="subtitle" id="trendsMessage">Add at least two readings to see your trends</p>
+                <div id="trendsChart"></div>
+            </div>
+        </main>
+
+        <!-- Hidden export template -->
+        <div id="exportContent" class="export-template">
+            <h1 id="exportTitle"></h1>
+            <table id="exportTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Systolic</th>
+                        <th>Diastolic</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Overlay & Share Menu -->
+    <div id="shareOverlay" class="overlay hidden">
+        <div class="share-menu">
+            <span id="closeBtn" class="close-btn">x</span>
+            <h3>Share this page</h3>
+            <div class="link-bar">
+                <input type="text" id="shareLink" readonly value="http://mmssb.github.io/pressurebuddy.com" />
+                <button id="copyBtn">Copy</button>
+            </div>
+            <div class="social-buttons">
+                <a href="#" onclick="shareTo('whatsapp')" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" onclick="shareTo('facebook')" class="social-icon facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" onclick="shareTo('twitter')" class="social-icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" onclick="shareTo('bluesky')" class="social-icon bluesky"><i class="fa-brands fa-bluesky"></i></a>
+                <a href="#" onclick="shareTo('email')" class="social-icon email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" onclick="shareTo('gmail')" class="social-icon gmail"><i class="fa-brands fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div id="mms-overlay">
+        <a href="https://mmssb.github.io/" target="_blank" rel="noopener noreferrer">
+            <img src="https://mmssb.github.io/assets/images/mmslogo.PNG" alt="MMS Logo" class="mms-logo">
+            <span>Made by MMS</span>
+        </a>
+    </div> -->
+    
+    <script src="./script.js"></script>
+    <script src="share.js"></script>
+</body>
+</html>
