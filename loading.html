@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <link rel="stylesheet" href="loading/loading.css">
+        <link rel="shortcut icon" href="images/logo (15).ico" type="image/x-icon">
+
+</head>
+<body>
+    <!-- From Uiverse.io by Nawsome --> 
+<!-- <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+	<div class="wheel"></div>
+	<div class="hamster">
+		<div class="hamster__body">
+			<div class="hamster__head">
+				<div class="hamster__ear"></div>
+				<div class="hamster__eye"></div>
+				<div class="hamster__nose"></div>
+			</div>
+			<div class="hamster__limb hamster__limb--fr"></div>
+			<div class="hamster__limb hamster__limb--fl"></div>
+			<div class="hamster__limb hamster__limb--br"></div>
+			<div class="hamster__limb hamster__limb--bl"></div>
+			<div class="hamster__tail"></div>
+		</div>
+	</div>
+	<div class="spoke"></div>
+</div> -->
+<!-- From Uiverse.io by fanishah --> 
+<div>
+  <svg height="108px" width="108px" viewBox="0 0 128 128" class="loader">
+    <defs>
+      <clipPath id="loader-eyes">
+        <circle transform="rotate(-40,64,64) translate(0,-56)" r="8" cy="64" cx="64" class="loader__eye1"></circle>
+        <circle transform="rotate(40,64,64) translate(0,-56)" r="8" cy="64" cx="64" class="loader__eye2"></circle>
+      </clipPath>
+      <linearGradient y2="1" x2="0" y1="0" x1="0" id="loader-grad">
+        <stop stop-color="#000" offset="0%"></stop>
+        <stop stop-color="#fff" offset="100%"></stop>
+      </linearGradient>
+      <mask id="loader-mask">
+        <rect fill="url(#loader-grad)" height="128" width="128" y="0" x="0"></rect>
+      </mask>
+    </defs>
+    <g stroke-dasharray="175.93 351.86" stroke-width="12" stroke-linecap="round">
+      <g>
+        <rect clip-path="url(#loader-eyes)" height="64" width="128" fill="hsl(160 85.2% 37.1%)"></rect>
+        <!-- <rect clip-path="url(#loader-eyes)" height="64" width="128" fill="hsl(193,90%,50%)"></rect> -->
+        <g stroke="hsl(160 85.2% 37.1%)" fill="none">
+          <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64" class="loader__mouth1"></circle>
+          <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64" class="loader__mouth2"></circle>
+        </g>
+      </g>
+      <g mask="url(#loader-mask)">
+        <rect clip-path="url(#loader-eyes)" height="64" width="128" fill="hsl(160 85.2% 37.1%)"></rect>
+        <g stroke="hsl(160 85.2% 37.1%)" fill="none">
+          <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64" class="loader__mouth1"></circle>
+          <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64" class="loader__mouth2"></circle>
+        </g>
+      </g>
+    </g>
+  </svg>
+  <!-- <h1 style="font-weight: bold; font-style: normal; font-family: Arial, Helvetica, sans-serif; color: white;">Loading</h1> -->
+</div>
+
+    <script>
+            setTimeout(() => {
+            window.location.href = 'dashboard/v1/index.html'; // Redirect to the main page
+        }, 6000); // 5 seconds delay
+</script>
+
+<!-- <script>
+      // Theme switching functionality
+function applyTheme(theme) {
+    if (theme === 'system') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.classList.toggle('dark-theme', prefersDark);
+    } else {
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+    }
+}
+
+// Apply theme immediately
+const savedTheme = localStorage.getItem('theme') || 'system';
+applyTheme(savedTheme);
+
+// Set up theme switching after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    const themeSelect = document.getElementById('themeSelect');
+    if (themeSelect) {
+        themeSelect.value = savedTheme;
+        themeSelect.addEventListener('change', () => {
+            const selectedTheme = themeSelect.value;
+            localStorage.setItem('theme', selectedTheme);
+            applyTheme(selectedTheme);
+        });
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('theme') === 'system' || !localStorage.getItem('theme')) {
+            applyTheme('system');
+        }
+    });
+});
+</script> -->
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/sugar.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SugarTrack</title>
+    <link rel="stylesheet" href="loading/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="shortcut icon" href="images/logo (15).ico" type="image/x-icon">
+
+
+    <!-- Firebase Scripts -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script> 
+     <script src="securityFlase.js"></script>  -->
+</head>
+<body oncontextmenu="return false;">
+
+
+
+
+
+
+
+    <!-- Loading Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        
+        <div class="welcome-card">
+            <div class="back">
+            <i onclick="back()" class="fa-solid fa-arrow-left"></i>
+            <!-- <i onclick="history.back();" class="fa-solid fa-arrow-left"></i> -->
+        </div>
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h1 class="welcomeh1">PressureBuddy</h1>
+            <h4>choose Version</h4>
+            <br>
+ <div class="button-group">
+  <a href="loading.html"><button class="load">PBV1.0</button></a>
+  <a href="loading2.html"><button class="load">PBV2.0</button></a>
+  <!-- <a href="loading3.html"><button class="load">STV3.0</button></a> -->
+</div>
+        </div>
+    </div>
+
+
+
+  
+    <!-- <script src="./history.js"></script> -->
+        <!-- <script src="security.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="suggesth.js"></script> -->
+        <!-- <script src="sidebar.js"></script> -->
+                <!-- <script src="share.js"></script> -->
+                        <!-- <script src="dashboard/beta/online/accentcolor.js"></script> -->
+
+
+
+
+<!-- Add these in the head section -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
+<script>
+    // DOM elements
+    const elements = {
+        welcomeScreen: document.getElementById('welcomeScreen'),
+
+    };
+    function showAppUI() {
+
+        elements.welcomeScreen.style.display = 'none';
+    }
+</script>
+<!-- <script>
+    // Theme switching functionality
+function applyTheme(theme) {
+    if (theme === 'system') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.classList.toggle('dark-theme', prefersDark);
+    } else {
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+    }
+}
+
+// Apply theme immediately
+const savedTheme = localStorage.getItem('theme') || 'system';
+applyTheme(savedTheme);
+
+// Set up theme switching after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    const themeSelect = document.getElementById('themeSelect');
+    if (themeSelect) {
+        themeSelect.value = savedTheme;
+        themeSelect.addEventListener('change', () => {
+            const selectedTheme = themeSelect.value;
+            localStorage.setItem('theme', selectedTheme);
+            applyTheme(selectedTheme);
+        });
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('theme') === 'system' || !localStorage.getItem('theme')) {
+            applyTheme('system');
+        }
+    });
+});
+</script> -->
+<script>
+    function back() {
+window.location.href = "./index.html";
+}
+</script>
+</body>
+</html>
